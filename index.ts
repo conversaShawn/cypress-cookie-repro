@@ -21,7 +21,10 @@ app.get("/home", (req, res) => {
 });
 
 app.post("/login", (req, res) => {
-  res.cookie("auth_token", "some_token");
+  res.set(
+    "set-cookie",
+    "auth_token=some_token; Path=/; Domain=localhost; Expires=Thu, 07 Jul 2022 08:44:01 GMT; Max-Age=2592000; HttpOnly; Secure; SameSite=None"
+  );
   res.send("logged in");
 });
 
@@ -30,5 +33,5 @@ app.post("/logout", (req, res) => {
   res.send("logged out");
 });
 
-app.listen(3000);
-console.log("listening on port 3000");
+app.listen(3001);
+console.log("listening on port 3001");

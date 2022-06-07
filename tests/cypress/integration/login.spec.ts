@@ -9,6 +9,8 @@ describe("logging in", function () {
     cy.get('[data-test="auth-status"]').contains("logged in");
 
     cy.request("POST", "/logout");
+
+    cy.visit("/home");
     cy.get('[data-test="auth-status"]').contains("logged out");
   });
 
@@ -30,6 +32,8 @@ describe("logging in", function () {
         method: "POST",
       })
     );
+
+    cy.visit("/home");
     cy.get('[data-test="auth-status"]').contains("logged out");
   });
 });
