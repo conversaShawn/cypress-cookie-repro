@@ -9,3 +9,8 @@ To reproduce:
 3. `pnpm i; pnpm test`. Run `login.spec.ts` again -- the tests will fail when, after making a successful `POST` to `/login`, the page reloads to show the user still logged out.
 
 The failure does not reproduce without the `Secure` option set in the `set-cookie` header -- remove that, and it passes in 7.
+
+## Notes from conversaShawn:
+If the above instructions are not working, try the following:
+1. `pnpm i; pnpm start`
+2. separate terminal `pnpx cypress open`
