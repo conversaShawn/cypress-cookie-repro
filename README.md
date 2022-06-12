@@ -14,3 +14,5 @@ The failure does not reproduce without the `Secure` option set in the `set-cooki
 If the above instructions are not working, try the following:
 1. `pnpm i; pnpm start`
 2. separate terminal `pnpx cypress open`
+
+- Adding `"experimentalSessionAndOrigin": true` to the config successfully passes tests
